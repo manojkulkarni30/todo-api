@@ -41,3 +41,7 @@ CREATE TABLE `Todos` (
   PRIMARY KEY (`Id`)
 );
 ```
+
+## Scalar API
+
+- Local scalar endpoint: [http://localhost:5159/scalar/](http://localhost:5159/scalar/)
