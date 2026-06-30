@@ -9,7 +9,7 @@ A simple .NET minimal Web API for managing TODO items. The API uses Entity Frame
 
 ## Prerequisites:
 
-- .NET 10 SDK
+- .NET 10 SDK ( [Download .NET 10 SDK](https://bit.ly/4wivxzM) )
 - MySQL ( [Install MySQL on macOS](https://bit.ly/4vHBtT4) | [Install MySQL on Windows 11](https://bit.ly/4fczlwA) )
 
 ## Database:
