@@ -2,27 +2,47 @@
 
 A simple .NET minimal Web API for managing TODO items. The API uses Entity Framework Core with a MySQL-compatible database (see `appsettings.json` connection string).
 
-Key features:
+## Key features:
 
 - Create, read, update and delete TODO items
 - Fields: Id (GUID stored as binary(16)), Title, Description, IsCompleted, Category, Priority, DueDate, ReminderDate, DateCreated, DateUpdated
 
-Prerequisites:
+## Prerequisites:
 
 - .NET 10 SDK
-- MySQL
+- MySQL ( [Install MySQL on macOS](https://bit.ly/4vHBtT4) | [Install MySQL on Windows 11](https://bit.ly/4fczlwA) )
 
-Running locally:
+## Database:
 
-1. Configure the connection string in `appsettings.json` (key: `ConnectionStrings:DefaultConnection`).
-2. Build and run the project from the solution folder:
+Log into your MySQL server via terminal or command prompt using below command
 
 ```bash
-dotnet build
-dotnet run
+mysql -u root -p
 ```
 
-Database: Create `Todos` table (MySQL)
+Enter your password when prompted.
+
+Create `TodoDB` database (MySQL)
+
+Run the following SQL on your MySQL server to create the `TodoDB` database.
+
+```sql
+CREATE DATABASE TodoDB;
+```
+
+Verify `TodoDB` database Creation (MySQL)
+
+```sql
+SHOW DATABASES;
+```
+
+Select `TodoDB` database (MySQL)
+
+```sql
+USE TodoDB;
+```
+
+Create `Todos` table (MySQL)
 
 Run the following SQL on your MySQL server to create the `Todos` table. This schema stores the `Id` as `BINARY(16)` (EF maps Guid to binary(16) in the DbContext).
 
@@ -40,6 +60,16 @@ CREATE TABLE `Todos` (
   `ReminderDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
 );
+```
+
+## Running locally:
+
+1. Configure the connection string in `appsettings.json` (key: `ConnectionStrings:DefaultConnection`).
+2. Build and run the project from the solution folder:
+
+```bash
+dotnet build
+dotnet run
 ```
 
 ## Scalar API

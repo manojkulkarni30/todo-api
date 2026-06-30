@@ -6,10 +6,10 @@ namespace TodoApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TodoController : ControllerBase
+    public class TodosController : ControllerBase
     {
         private readonly ITodoService _todoServices;
-        public TodoController(ITodoService todoServices)
+        public TodosController(ITodoService todoServices)
         {
             _todoServices = todoServices;
         }
